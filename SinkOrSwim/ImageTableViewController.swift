@@ -1,5 +1,5 @@
 //
-//  RootTableViewController.swift
+//  ImageTableViewController.swift
 //  SinkOrSwim
 //
 //  Created by Joseph DiLiello on 9/6/21.
@@ -7,70 +7,61 @@
 
 import UIKit
 
-class RootTableViewController: UITableViewController {
+class ImageTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var imageNamePicker: UIPickerView!
+    
+    lazy var imageModel = {
+        return ImageModel.sharedInstance()
+    }()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return imageModel.numberOfImages()
+    }
 
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return imageModel.getArrayOfImageNames()[row] as? String
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.imageNamePicker.delegate = self
+        self.imageNamePicker.dataSource = self
+        //imageNames = self.imageModel.getImageNames()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    
     // MARK: - Table view data source
 
-    // set up the number of different types of cells (i.e. sections)
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // there are only three sections here
-        // 0: Detailed Image Selection
-        // 1: Collection Image View
-        // 2: Play Guessing Game
-        return 3
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
-    // set up the number of rows per section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // all sections here only have 1 row per section
-        // written to be a little more flexible if need to adjust
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 1
-        } else {
-            return 1
-        }
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    // fill each row with text/label
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "IndividualImagesCell", for: indexPath)
-            cell.textLabel!.text = "Detailed Image Selection"
-            return cell
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionImagesCell", for: indexPath)
-            cell.textLabel!.text = "Collection View of Images"
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GuessingGameCell", for: indexPath)
-            cell.textLabel!.text = "Play Guessing Game"
-            return cell
-        }
-    }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        if let vc = segue.destination as? ScrollViewController,
-           let cell = sender as? UITableViewCell,
-           let name = cell.textLabel?.text {
-                vc.displayImageName = name
-        }
+        // Configure the cell...
+
+        return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

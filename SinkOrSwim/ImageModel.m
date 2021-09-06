@@ -34,7 +34,7 @@
 // (this is the only part of the code that is hard coded
 -(NSArray*)imageNameArray{
     if(!_imageNameArray)
-        _imageNameArray = @[@"Mercury", @"Bird", @"Starry Night", @"Tires", @"Saturn"];
+        _imageNameArray = @[@"Bird", @"Starry Night", @"Mercury", @"Tires", @"Saturn"];
     return _imageNameArray;
 }
 
@@ -49,6 +49,10 @@
             [_imageDict setObject:[UIImage imageNamed:name] forKey:name];
         };
     return _imageDict;
+}
+
+-(NSArray*)getArrayOfImageNames{
+    return self.imageNameArray;
 }
 
 // return the image from the name
@@ -68,7 +72,7 @@
 }
 
 // return the image name from the index
--(NSString*)getImageNameForIndex:(NSInteger)index;{
+-(NSString*)getImageNameByIndex:(NSInteger)index;{
     return self.imageNameArray[index];
 }
 
