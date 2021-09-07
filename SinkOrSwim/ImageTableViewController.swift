@@ -15,24 +15,34 @@ class ImageTableViewController: UITableViewController, UIPickerViewDelegate, UIP
         return ImageModel.sharedInstance()
     }()
     
+    // number of types of selections within picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    // number of rows in picker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return imageModel.numberOfImages()
     }
-
+    
+    // return values for each row in picker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return imageModel.getArrayOfImageNames()[row] as? String
     }
+    
+    // Capture the picker view selection
+    /*
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // this should do something
+        name = se
+    }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.imageNamePicker.delegate = self
         self.imageNamePicker.dataSource = self
-        //imageNames = self.imageModel.getImageNames()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

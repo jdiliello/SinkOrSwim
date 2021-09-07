@@ -19,6 +19,7 @@
 		D0ED4B1D26E6C162006257EA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4B1C26E6C162006257EA /* ScrollViewController.swift */; };
 		D0ED4B1F26E6C273006257EA /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4B1E26E6C273006257EA /* ImageTableViewController.swift */; };
 		D0ED4B2326E6DD95006257EA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4B2226E6DD95006257EA /* CollectionViewCell.swift */; };
+		D0ED4B2526E6EE7F006257EA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4B2426E6EE7F006257EA /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D0ED4B1C26E6C162006257EA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		D0ED4B1E26E6C273006257EA /* ImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 		D0ED4B2226E6DD95006257EA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D0ED4B2426E6EE7F006257EA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D0ED4AEE26E68FF8006257EA /* AppDelegate.swift */,
 				D0ED4AF026E68FF8006257EA /* SceneDelegate.swift */,
 				D0ED4AF226E68FF8006257EA /* ViewController.swift */,
+				D0ED4B2426E6EE7F006257EA /* GameViewController.swift */,
 				D0ED4AF426E68FF8006257EA /* Main.storyboard */,
 				D0ED4B2226E6DD95006257EA /* CollectionViewCell.swift */,
 				D0ED4B1E26E6C273006257EA /* ImageTableViewController.swift */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0ED4B2526E6EE7F006257EA /* GameViewController.swift in Sources */,
 				D0ED4B1926E6BD9C006257EA /* CollectionViewController.swift in Sources */,
 				D0ED4B1F26E6C273006257EA /* ImageTableViewController.swift in Sources */,
 				D0ED4B2326E6DD95006257EA /* CollectionViewCell.swift in Sources */,
