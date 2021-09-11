@@ -9,23 +9,25 @@ import UIKit
 
 class ScrollViewController: UIViewController, UIScrollViewDelegate {
 
-    lazy var imageModel = {
-        return ImageModel.sharedInstance()
+    lazy var movieModel = {
+        return MovieModel.sharedInstance()
     }()
     
     lazy private var imageView: UIImageView? = {
         // display image name comes from the handoff between the table view controller
         // and the scroll view controller
-        return UIImageView.init(image: self.imageModel.getImageWithName(displayImageName))
+        let titleDict = self.movieModel.movieDict[displayImageName] as! NSMutableDictionary
+        return UIImageView.init(image: titleDict["poster"] as? UIImage)
     }()
     
     @IBOutlet weak var scrollView: UIScrollView!
-
-    var displayImageName = "Saturn"
+    
+    var displayImageName = "Thor Ragnarok"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("scroll view did load")
 
         if let size = self.imageView?.image?.size{
             self.scrollView.addSubview(self.imageView!)

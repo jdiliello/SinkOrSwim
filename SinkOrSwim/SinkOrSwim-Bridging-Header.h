@@ -3,3 +3,4 @@
 //
 
 #import "ImageModel.h"
+#import "MovieModel.h"

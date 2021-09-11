@@ -9,6 +9,10 @@ import UIKit
 
 class RootTableViewController: UITableViewController {
 
+    lazy var movieModel:MovieModel = {
+        return MovieModel.sharedInstance()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,35 +31,50 @@ class RootTableViewController: UITableViewController {
         // 0: Detailed Image Selection
         // 1: Collection Image View
         // 2: Play Guessing Game
-        return 3
+        return movieModel.genreDict.count
     }
 
     // set up the number of rows per section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // all sections here only have 1 row per section
         // written to be a little more flexible if need to adjust
-        if section == 0 {
-            return 1
-        } else if section == 1 {
-            return 1
+        if let genre = movieModel.genreArray[section] as? NSString{
+            if let titleList = movieModel.genreDict[genre] as? NSMutableArray{
+                return titleList.count
+            }
+            return 0
         } else {
-            return 1
+            return 0
         }
+        
     }
 
     // fill each row with text/label
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let genre = movieModel.genreArray[indexPath.section] as! String
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "IndividualImagesCell", for: indexPath)
-            cell.textLabel!.text = "Detailed Image Selection"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Action", for: indexPath)
+            let titles = movieModel.genreDict[genre] as! Array<Any>
+            cell.textLabel!.text = titles[indexPath.row] as? String
+            cell.detailTextLabel?.text = genre
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionImagesCell", for: indexPath)
-            cell.textLabel!.text = "Collection View of Images"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Adventure", for: indexPath)
+            let titles = movieModel.genreDict[genre] as! Array<Any>
+            cell.textLabel!.text = titles[indexPath.row] as? String
+            cell.detailTextLabel?.text = genre
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Comedy", for: indexPath)
+            let titles = movieModel.genreDict[genre] as! Array<Any>
+            cell.textLabel!.text = titles[indexPath.row] as? String
+            cell.detailTextLabel?.text = genre
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GuessingGameCell", for: indexPath)
-            cell.textLabel!.text = "Play Guessing Game"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Drama", for: indexPath)
+            let titles = movieModel.genreDict[genre] as! Array<Any>
+            cell.textLabel!.text = titles[indexPath.row] as? String
+            cell.detailTextLabel?.text = genre
             return cell
         }
     }

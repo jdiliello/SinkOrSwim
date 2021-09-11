@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D017307226EC1CDB002840F7 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D017307126EC1CDB002840F7 /* MovieModel.m */; };
+		D017307526EC3F6D002840F7 /* movies.csv in Resources */ = {isa = PBXBuildFile; fileRef = D017307426EC3F6D002840F7 /* movies.csv */; };
 		D0ED4AEF26E68FF8006257EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4AEE26E68FF8006257EA /* AppDelegate.swift */; };
 		D0ED4AF126E68FF8006257EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4AF026E68FF8006257EA /* SceneDelegate.swift */; };
 		D0ED4AF326E68FF8006257EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED4AF226E68FF8006257EA /* ViewController.swift */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D017307126EC1CDB002840F7 /* MovieModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
+		D017307326EC1CEF002840F7 /* MovieModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
+		D017307426EC3F6D002840F7 /* movies.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = movies.csv; path = data/movies.csv; sourceTree = "<group>"; };
 		D0ED4AEB26E68FF8006257EA /* SinkOrSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinkOrSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ED4AEE26E68FF8006257EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0ED4AF026E68FF8006257EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		D0ED4AED26E68FF8006257EA /* SinkOrSwim */ = {
 			isa = PBXGroup;
 			children = (
+				D017307426EC3F6D002840F7 /* movies.csv */,
 				D0ED4AEE26E68FF8006257EA /* AppDelegate.swift */,
 				D0ED4AF026E68FF8006257EA /* SceneDelegate.swift */,
 				D0ED4AF226E68FF8006257EA /* ViewController.swift */,
@@ -86,6 +92,8 @@
 				D0ED4AF926E68FFB006257EA /* LaunchScreen.storyboard */,
 				D0ED4AFC26E68FFB006257EA /* Info.plist */,
 				D0ED4B1126E6B015006257EA /* SinkOrSwim-Bridging-Header.h */,
+				D017307126EC1CDB002840F7 /* MovieModel.m */,
+				D017307326EC1CEF002840F7 /* MovieModel.h */,
 				D0ED4B1526E6B0E5006257EA /* ImageModel.h */,
 				D0ED4B1626E6B124006257EA /* ImageModel.m */,
 			);
@@ -153,6 +161,7 @@
 				D0ED4AFB26E68FFB006257EA /* LaunchScreen.storyboard in Resources */,
 				D0ED4AF826E68FFB006257EA /* Assets.xcassets in Resources */,
 				D0ED4AF626E68FF8006257EA /* Main.storyboard in Resources */,
+				D017307526EC3F6D002840F7 /* movies.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +175,7 @@
 				D0ED4B2526E6EE7F006257EA /* GameViewController.swift in Sources */,
 				D0ED4B1926E6BD9C006257EA /* CollectionViewController.swift in Sources */,
 				D0ED4B1F26E6C273006257EA /* ImageTableViewController.swift in Sources */,
+				D017307226EC1CDB002840F7 /* MovieModel.m in Sources */,
 				D0ED4B2326E6DD95006257EA /* CollectionViewCell.swift in Sources */,
 				D0ED4B1726E6B124006257EA /* ImageModel.m in Sources */,
 				D0ED4AF326E68FF8006257EA /* ViewController.swift in Sources */,
